@@ -60,9 +60,9 @@ function getTokenPopup(request) {
     });
 }
 
-function searchM365() {
+function searchM365(searchText) {
     getTokenPopup(loginRequest).then(response => {
-        callMSSearchGraph(graphConfig.graphMicrosoftSearchEndpoint, response.accessToken, updateSearchUI);
+        callMSSearchGraph(graphConfig.graphMicrosoftSearchEndpoint, response.accessToken, searchText, updateSearchUI);
     }).catch(error => {
         console.error(error);
     });

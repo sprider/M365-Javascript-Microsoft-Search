@@ -19,14 +19,14 @@ function callMSGraph(endpoint, token, callback) {
     .catch((error) => console.log(error));
 }
 
-function callMSSearchGraph(theUrl, accessToken, callback) {
+function callMSSearchGraph(theUrl, accessToken, searchText, callback) {
   var params = {
     requests: [
       {
         entityTypes: ["microsoft.graph.driveItem"],
         query: {
           query_string: {
-            query: "visa",
+            query: searchText,
           },
         },
         from: 0,

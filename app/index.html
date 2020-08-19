@@ -58,10 +58,13 @@
             <div id="profile-div"></div>
             <br />
             <br />
+            <input id="searchText" type="text" />
+            <br />
+            <br />
             <button
               class="btn btn-primary"
               id="searchM365"
-              onclick="searchM365()"
+              onclick="searchM365(document.getElementById('searchText').value)"
             >
               Search
             </button>

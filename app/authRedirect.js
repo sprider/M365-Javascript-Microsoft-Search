@@ -53,12 +53,13 @@ function getTokenRedirect(request) {
   });
 }
 
-function searchM365() {
+function searchM365(searchText) {
   getTokenRedirect(loginRequest)
     .then((response) => {
       callMSSearchGraph(
         graphConfig.graphMicrosoftSearchEndpoint,
         response.accessToken,
+        searchText,
         updateSearchUI
       );
     })
